@@ -7,6 +7,9 @@ class DataProcessor:
     """
     A class for loading, cleaning, and preprocessing JSON data into a Pandas DataFrame.
     """
+    import logging
+
+    logging.basicConfig(level=logging.INFO)
 
     def __init__(self, file_path):
         """
@@ -27,7 +30,7 @@ class DataProcessor:
             pd.DataFrame: Loaded DataFrame.
         """
         try:
-            self.logger.info(" Reading .json files")
+            # self.logger.info(" Reading .json files")
             with open(self.file_path, "r", encoding="utf-8") as file:
                 data = json.load(file)  # Load JSON properly
             
